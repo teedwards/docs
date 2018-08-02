@@ -25,6 +25,37 @@ The contact object contains the following fields and linked objects:
 | default_affiliation | unsigned | The unique identifier of the default [affiliation](#affiliations) associated with the contact. |
 | status | unsigned or object | The [status](#statuses) of the contact. |
 | standing | string | The contact's standing, this is part of the status object. For example "active", "potential". |
+| contact_status | unsigned or object | The contact's corresponding [contact status](#the-contact-status). |
+
+#### The Contact Status
+
+> Example contact status object:
+
+```json
+{
+  "title": "Potential",
+  "standing": "potential",
+  "id": "1",
+  "start": "yes",
+  "ordering": "0",
+  "color": "orange"
+}
+```
+
+Statuses may be used to track the progress of a contact. These statuses may be configured from the deployment, see the
+[support documentation](https://www.accelo.com/resources/help/faq/automating-your-business-processes/statuses/) for more
+information. The status objects contain the following:
+
+| Field | Type | Description |
+|:-|:-|:-|
+| **id** | unsigned | A unique identifier for the status. |
+| **title** | string | A name for the status. |
+| standing | string | A string describing the standing of the contact. |
+| color | string | The color of the status shown on the deployment. |
+| start | select | Either "yes" or "no", whether a contact may be created with this status. |
+| ordering | int | A number representing the order the status is displayed in the Web App. |
+
+
 
 
 
@@ -104,6 +135,7 @@ This request supports [basic filters](#filters-basic-filters) over the following
 | status | |
 | username | |
 | contact_number | Filter over `phone`, `fax`, and `mobile`. |
+| contact_status_id ||
 
 ##### Date Filters
 This request supports [date filters](#filters-date-filters) over the following fields:
@@ -131,6 +163,7 @@ This request supports the use of the [`_search`](#configuring-the-response-searc
 | firstname | |
 | surname | |
 | email | |
+| mobile |  |
 
 #### Handling the Response
 This request will return a list of contacts containing their default fields and any additional field requested by `_fields`, and displayed according to any pagination parameters, filters or searches used.
