@@ -705,7 +705,7 @@ The following fields may be set through this request:
 | **engagement_table** | The `against_type` for the job. |
 | **engagement_id** |The `against_id` for the job. |
 | **manager_id** | The `staff_id` of the staff member to be assigned manager. This MUST point to a valid staff. |
-| **type_id*** | MUST point to a valid [job type](#the-job-type). |
+| **type_id** | MUST point to a valid [job type](#the-job-type). |
 | title ||
 | rate_id ||
 | status_id | MUST point to a valid [job status](#the-job-status). |
