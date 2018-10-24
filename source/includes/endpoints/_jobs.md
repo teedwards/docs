@@ -33,6 +33,7 @@
   "rate_charged": "125.00",
   "date_commenced": "1494209132",
   "affiliation": "77"
+  "comments": "Comments made against the job"
 }
 ```
 
@@ -60,6 +61,7 @@ The jobs object contains the following:
 | rate_charged | decimal | The rate charged for billable work, this is part of the rate object. |
 | status | unsigned or object | The [status](#statuses) associated with the job|
 | standing | string | The standing of the project. This is part of the status. |
+| comments | string | Any comments or notes made against the job |
 | manager | unsigned or object | The [staff](#staff) manager managing the job. |
 | modified_by | unsigned or object | The [staff](#staff) member who last modified the job. |
 | company | unsigned or object | The [company](#companies) against the job, if any. |
@@ -652,6 +654,7 @@ The following fields from the [job object](#the-job-object) may be updated with 
 | rate_charged ||
 | date_due ||
 | date_created ||
+| comments ||
 
 
 #### Configuring the Response
@@ -712,6 +715,7 @@ The following fields may be set through this request:
 | date_due ||
 | date_started ||
 | date_created | If this is not sent it will default to the current time. |
+| comments ||
 
 
 #### Configuring the Response
