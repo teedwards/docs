@@ -793,7 +793,7 @@ where the object is "prospects", and whose id is `prospect_id`.
 
 
 
-### List all Profile Field Values on a Prospect
+### List all Profile Field Values on Prospects
 > See the [profiles section](#list-profile-values) for a sample request
 
 `GET /prospects/profiles/values`
